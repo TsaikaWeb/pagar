@@ -1,6 +1,6 @@
 <?php
 require("confphp.php");
-//добавление данных в таблице
+//добавление данных в таблицу
 if(isSet($_REQUEST["newhuman"]))
 {
     $kask = $yhendus->prepare("INSERT INTO Klient( Nimi, Perenimi, Telefoninumber,Zakaz) VALUES(?,?,?,?) ");
@@ -13,6 +13,11 @@ if(isSet($_REQUEST["newhuman"]))
 <!DOCTYPE HTML>
 <html>
   <script type="text/javascript">
+//Скрипт для авторизации админа
+//Для того чтобы получить доступ к страницам админа, необходимо нажать на кнопку "Войти на сайт"
+//После нажатия на кнопку надо ввести логин и пароль
+//Логин -->test
+//Пароль -->1234
 function Input(){
 login_ok = false;
 user_name = "";
@@ -21,7 +26,7 @@ user_name = prompt("Логин","");
 user_name = user_name.toLowerCase();
 password = prompt("Пароль","");
 password = password.toLowerCase();
-if (user_name=="login" && password=="pass") {
+if (user_name=="test" && password=="1234") {
  login_ok=true;
  window.location="Pagar.php";
 }
@@ -34,7 +39,7 @@ if (login_ok==false) alert("Неверный логин или пароль!");
 }
 </script>
     <head>
-        <title>Registration</title>
+      <title>Заказ</title>
         <meta charset="utf8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
@@ -47,7 +52,7 @@ if (login_ok==false) alert("Неверный логин или пароль!");
        <nav>
     <ul>
         <li><a href="Tellimusi.php">Заказать выпечку</a></li>
-      <li><a href="tsaik_php.docx" download>Word File</a></li>    
+       <!--<li><a href="tsaik_php.docx" download>Word File</a></li>-->    
          </ul>
     </nav>
         <h1>Добро пожаловать в пекарню</h1>
@@ -109,16 +114,7 @@ if (login_ok==false) alert("Неверный логин или пароль!");
             <?php
         }
   
-        //while($kask->fetch())
-        //{
 
-          //  echo "<h2>".htmlspecialchars($pealkiri)."</h2>";
-//            echo"<div>".htmlspecialchars($sisu)."</div>";
-  //     }
-        //htmlspecialchars - не исполняет html код, записанный <>
-        //fetch() - овзвращает запрашиваемые из базы данных значения
-        //while - цикл, который отображает все введенные в базу данных значения
-        //
        ?>
                          </div>
       <br>

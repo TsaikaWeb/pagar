@@ -1,5 +1,6 @@
 <?php
 require("confphp.php");
+//добавление записи в БД
 if(isSet($_REQUEST["uusrida"])) {
     $kask = $yhendus->prepare("INSERT INTO Pagar(Nimetus,Hind,Number) VALUES (?,?,?)");
     $kask->bind_param("ssi", $_REQUEST["Nimetus"], $_REQUEST["Hind"], $_REQUEST["Number"] );
@@ -7,7 +8,7 @@ if(isSet($_REQUEST["uusrida"])) {
     header("Location: $_SERVER[PHP_SELF]");
     $yhendus->close();
 }
-//удаление конкретной записи
+//удаление конкретной записи из БД 
 if(isSet($_REQUEST["kustutamine"])){
     $kask=$yhendus->prepare("DELETE FROM Pagar WHERE PagarID=?");
     $kask->bind_param("i", $_REQUEST["kustutamine"]);
@@ -18,7 +19,7 @@ if(isSet($_REQUEST["kustutamine"])){
 <!DOCTYPE HTML>
 <html lang="et">
 <head>
-    <title>Parties</title>
+  <title>Добавление выпечки</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -28,10 +29,11 @@ if(isSet($_REQUEST["kustutamine"])){
 
         <li><a href="Pagar.php">Заказы</a></li>
         <li><a href="TellimusAdmin.php">Добавить новую выпечку</a></li>
-      <li><a href="tsaik_php.docx" download>Word File</a></li>       
+       <li><a href="Tellimusi.php">На главную страницу</a></li>
+       <!--<li><a href="tsaik_php.docx" download>Word File</a></li>-->       
     </ul>
     </nav>
-   
+<!--Форма для добавления новой выпечки-->
     <div >
         <form action="?" id="form1">
             <input type="hidden" name="uusrida" value="jah">
@@ -49,7 +51,7 @@ if(isSet($_REQUEST["kustutamine"])){
           <div id="menyy">
           <h3>Меню для заказа</h3>
             <?php
-            // просмотр данных
+            // просмотр данных из БД Pagar
             echo "<table>";
             echo "<tr>";
             echo "<th>ID</th>";

@@ -4,7 +4,6 @@ require("confphp.php");
 if(isSet($_REQUEST["delete"])){
     $kask=$yhendus->prepare("DELETE FROM Klient WHERE KlientID=?");
     $kask->bind_param("i", $_REQUEST["delete"]);
-    // "i" - int для поля id
     $kask->execute();
 }
 ?>
@@ -21,13 +20,13 @@ if(isSet($_REQUEST["delete"])){
 
         <li><a href="Pagar.php">Заказы</a></li>
         <li><a href="TellimusAdmin.php">Добавить новую выпечку</a></li>
-      <li><a href="tsaik_php.docx" download>Word File</a></li>    
+      <li><a href="Tellimusi.php">На главную страницу</a></li>
+      <!--<li><a href="tsaika_php.docx" download>Word File</a></li>-->    
     </ul>
     </nav>
-      <h1>Members</h1>
         <div id="menyy">
             <?php
-            // просмотр данных
+            // просмотр данных из БД Klient
             echo "<table>";
             echo "<tr>";
             echo "<th>ID</th>";
