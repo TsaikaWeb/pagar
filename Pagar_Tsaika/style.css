@@ -1,0 +1,76 @@
+body {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ff6d56;
+    background-color: #505866;
+    font-family: "Tahoma";
+    font-size: 18px;
+
+}
+
+#sisu{
+
+  text-allign: left;
+  
+
+
+
+
+}
+#menyy{
+
+    overflow: visible;
+    width: 20%;
+    text-align: center;
+    border-radius: 3px;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 1px 20px;
+
+}
+
+li a:hover {
+    background-color: #111;
+}
+h1{
+    text-allign: center;
+
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+
+
+
+}
+a:hover{
+    background-color: #111;
+}
+#menu {
+    float:right;
+    width: 100%;
+    text-allign:left;
+}
+p{
+    text-align: left;
+}
